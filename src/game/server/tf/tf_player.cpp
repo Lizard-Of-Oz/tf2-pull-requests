@@ -20247,6 +20247,9 @@ int	CTFPlayer::CalculateTeamBalanceScore( void )
 //-----------------------------------------------------------------------------
 void CTFPlayer::AwardAchievement( int iAchievement, int iCount )
 {
+	if (m_Shared.InCond( TF_COND_CANNOT_EARN_ACHIEVEMENTS ))
+		return;
+
 	if ( TFGameRules()->State_Get() >= GR_STATE_TEAM_WIN )
 	{
 		// allow the Helltower loot island achievement during the bonus time
