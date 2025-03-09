@@ -210,8 +210,11 @@ public:
 	int		m_bitsDamageInflict;	// DMG_ damage type that the door or tigger does
 	int		m_damageModel;
 	bool	m_bNoDmgForce;		// Should damage from this trigger impart force on what it's hurting
+#ifdef TF_DLL
+	string_t m_szKillIcon;
+#endif // TF_DLL
 
-	enum
+    enum
 	{
 		DAMAGEMODEL_NORMAL = 0,
 		DAMAGEMODEL_DOUBLE_FORGIVENESS,
